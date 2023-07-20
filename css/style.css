@@ -5,21 +5,76 @@
 
 /* Styling for the whole body */
 body {
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
     text-align: center;
     font-family: 'Roboto Mono';
-    font-size: xx-large;
+    color: #D0D0D0;
     max-width: 100%;
     overflow-x: hidden;
     transition: 1s;
-    background-color: #111;
-    padding-top: 100px;
+    background:
+        linear-gradient(-45deg, #001C30, #164B60),
+        linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
+    background-size: 200% 200%;
+    animation: gradient 10s ease infinite;
+    height: 100vh;
+}
+ 
+/* Animation for background gradient */
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
-/* Styling for the header section */
-.header {
+/* Styling for the centered container */
+.container {
+    width: 90%;
+    max-width: 900px;
+    padding: 100px;
     position: absolute;
-    top: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 28, 48, 0.2);
+    border-radius: 50px;
+}
+
+/* Styling for the link container */
+.link-container {
+    display: flex;
+    padding-top: 20px;
+    justify-content: center;
+}
+
+/* Styling for the GitHub icon link */
+#github-link {
+    width: 40px;
+    height: auto;
+    transition: 0.5s;
+}
+
+/* Hover effect for GitHub icon */
+#github-link:hover,
+#github:focus {
+    scale: 1.5;
+}
+
+/* Styling for the footer section */
+.footer {
+    position: absolute;
+    bottom: 0;
     left: 0;
     display: flex;
     align-items: center;
@@ -28,6 +83,5 @@ body {
     width: 100%;
     padding: 10px;
     color: var(--primary-light);
-    font-size: x-large;
-    z-index: 999;
+    font-size: medium;
 }
